@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExceptionConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-servicio-productos</a> &gt; <a href="index.source.html" class="el_package">com.formacionbdi.springboot.app.productos.exception.config</a> &gt; <span class="el_source">ExceptionConfig.java</span></div><h1>ExceptionConfig.java</h1><pre class="source lang-java linenums">package com.formacionbdi.springboot.app.productos.exception.config;
+
+import com.formacionbdi.springboot.app.productos.controllers.ProductoController;
+import com.formacionbdi.springboot.app.productos.exception.BusinessException;
+import com.formacionbdi.springboot.app.productos.exception.DataAccessException;
+import com.formacionbdi.springboot.app.productos.exception.ServiceException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
+@ControllerAdvice
+<span class="fc" id="L21">public class ExceptionConfig {</span>
+
+<span class="fc" id="L23">    private static final Log LOGGER = LogFactory.getLog(ExceptionConfig.class.getName());</span>
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity&lt;ErrorBody&gt; methodArgumentNotValidException(HttpServletRequest request, MethodArgumentNotValidException e) {
+<span class="nc" id="L27">        LOGGER.info (&quot;Ha ocurrido de formato: &quot;+e.getMessage()+ &quot; causa: &quot;+e.getCause());</span>
+<span class="nc" id="L28">        BindingResult result = e.getBindingResult();</span>
+<span class="nc" id="L29">        List&lt;FieldError&gt; fieldErrors = result.getFieldErrors();</span>
+<span class="nc" id="L30">        StringBuilder errorMessage = new StringBuilder();</span>
+<span class="nc" id="L31">        fieldErrors.forEach(f -&gt; errorMessage.append(f.getField()).append(&quot; &quot;).append(f.getDefaultMessage()).append(&quot; &quot;));</span>
+<span class="nc" id="L32">        ErrorBody errorBody = new ErrorBody(HttpStatus.BAD_REQUEST.value(),errorMessage.toString());</span>
+<span class="nc" id="L33">        return new ResponseEntity&lt;&gt;(errorBody, HttpStatus.BAD_REQUEST);</span>
+    }
+
+    @ExceptionHandler(BusinessException.class)
+    public ResponseEntity&lt;ErrorBody&gt; businessException (BusinessException e) {
+<span class="nc" id="L38">        LOGGER.info (&quot;Ha ocurrido un error de negocio: &quot;+e.getMessage()+ &quot; causa: &quot;+e.getCause());</span>
+<span class="nc" id="L39">        ErrorBody errorBody = new ErrorBody(999,e.getMessage());</span>
+<span class="nc" id="L40">        return new ResponseEntity&lt;&gt;(errorBody, HttpStatus.BAD_REQUEST);</span>
+    }
+
+    @ExceptionHandler(DataAccessException.class)
+    public ResponseEntity&lt;ErrorBody&gt; dataAccessException (DataAccessException e) {
+<span class="nc" id="L45">        LOGGER.info (&quot;Ha ocurrido un error de acceso a los datos: &quot;+e.getMessage()+ &quot; causa: &quot;+e.getCause());</span>
+<span class="nc" id="L46">        ErrorBody errorBody = new ErrorBody(998,e.getMessage());</span>
+<span class="nc" id="L47">        return new ResponseEntity&lt;&gt;(errorBody, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+    }
+
+    @ExceptionHandler(ServiceException.class)
+    public ResponseEntity&lt;ErrorBody&gt; serviceException (ServiceException e) {
+<span class="nc" id="L52">        LOGGER.info (&quot;Ha ocurrido un error en el consumo de un servicio: &quot;+e.getMessage()+ &quot; causa: &quot;+e.getCause());</span>
+<span class="nc" id="L53">        ErrorBody errorBody = new ErrorBody(997,e.getMessage());</span>
+<span class="nc" id="L54">        return new ResponseEntity&lt;&gt;(errorBody, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;ErrorBody&gt; exception (Exception e) {
+<span class="nc" id="L59">        LOGGER.info (&quot;Ha ocurrido un error generico: &quot;+e.getMessage()+ &quot; causa: &quot;+e.getCause());</span>
+<span class="nc" id="L60">        ErrorBody errorBody = new ErrorBody(HttpStatus.INTERNAL_SERVER_ERROR.value(),e.getMessage());</span>
+<span class="nc" id="L61">        return new ResponseEntity&lt;&gt;(errorBody, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

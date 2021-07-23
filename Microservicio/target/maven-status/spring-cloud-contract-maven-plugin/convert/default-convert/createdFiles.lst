@@ -1,0 +1,2 @@
+META-INF/org.example/springboot-servicio-productos/1.0.0-SNAPSHOT/contracts/products/find_product_by_id.groovy
+META-INF/org.example/springboot-servicio-productos/1.0.0-SNAPSHOT/mappings/products/find_product_by_id.json

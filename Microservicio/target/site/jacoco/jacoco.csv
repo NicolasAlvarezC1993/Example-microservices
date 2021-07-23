@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.models.service,ProductoServiceImpl,65,0,2,0,11,0,6,0,5,0
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.exception.config,ExceptionConfig,179,8,0,0,19,2,6,2,6,2
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.exception.config,ErrorBody,26,0,0,0,12,0,6,0,6,0
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.exception,ServiceException,7,0,0,0,4,0,2,0,2,0
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.exception,BusinessException,7,0,0,0,4,0,2,0,2,0
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.exception,DataAccessException,7,0,0,0,4,0,2,0,2,0
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos,SpringbootServicioProductosApplication,5,30,0,0,2,7,1,2,1,2
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.models.entity,Producto,38,34,0,0,3,14,2,10,2,10
+springboot-servicio-productos,com.formacionbdi.springboot.app.productos.controllers,ProductoController,141,22,12,0,20,8,9,3,3,3

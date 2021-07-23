@@ -1,0 +1,11 @@
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/SpringbootServicioProductosApplication.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/models/service/ProductoServiceImpl.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/models/service/IProductoService.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/exception/config/ExceptionConfig.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/models/entity/Producto.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/controllers/ProductoController.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/exception/BusinessException.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/exception/config/ErrorBody.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/models/dao/ProductoDao.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/exception/ServiceException.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio/src/main/java/com/formacionbdi/springboot/app/productos/exception/DataAccessException.java

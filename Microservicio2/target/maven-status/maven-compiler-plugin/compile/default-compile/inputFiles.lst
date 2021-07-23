@@ -1,0 +1,14 @@
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/JSONHelper.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/StatusErrorDecoder.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/models/Producto.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/service/ItemServiceFeign.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/ServiceException.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/ExceptionConfig.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/service/ItemService.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/SpringbootServicioItemsApplication.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/models/Item.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/controller/ItemController.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/ErrorBody.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/clientes/ProductoClienteRest.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/BusinessException.java
+/home/nicolas/Escritorio/Amisoft/Unificado/Git/prueba-integracion-continua/Microservicio2/src/main/java/com/formacionbdi/springboot/app/items/decoder/DataAccessException.java

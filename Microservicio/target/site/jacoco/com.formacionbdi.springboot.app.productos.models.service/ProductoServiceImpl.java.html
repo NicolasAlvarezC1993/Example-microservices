@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProductoServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-servicio-productos</a> &gt; <a href="index.source.html" class="el_package">com.formacionbdi.springboot.app.productos.models.service</a> &gt; <span class="el_source">ProductoServiceImpl.java</span></div><h1>ProductoServiceImpl.java</h1><pre class="source lang-java linenums">package com.formacionbdi.springboot.app.productos.models.service;
+
+import com.formacionbdi.springboot.app.productos.controllers.ProductoController;
+import com.formacionbdi.springboot.app.productos.exception.BusinessException;
+import com.formacionbdi.springboot.app.productos.models.dao.ProductoDao;
+import com.formacionbdi.springboot.app.productos.models.entity.Producto;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+<span class="nc" id="L16">public class ProductoServiceImpl implements IProductoService {</span>
+
+<span class="nc" id="L18">	private static final Log LOGGER = LogFactory.getLog(ProductoServiceImpl.class.getName());</span>
+
+	@Autowired
+	private ProductoDao productoDao;
+		
+	@Override
+	@Transactional(readOnly = true)
+	public List&lt;Producto&gt; findAll() {
+
+<span class="nc" id="L27">		LOGGER.info (&quot;Se buscan todos los elementos&quot;);</span>
+<span class="nc" id="L28">		return (List&lt;Producto&gt;) productoDao.findAll();</span>
+
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Producto findById(Long id) {
+
+<span class="nc" id="L36">		LOGGER.info (&quot;Se busca elemento por id =&gt; &quot;+ id);</span>
+<span class="nc" id="L37">		return productoDao.findById(id).orElse(null);</span>
+		
+	}
+
+	@Override
+	public Producto create(Producto producto) {
+<span class="nc" id="L43">		LOGGER.info (&quot;Se validan los campos enviados segun el negocio, producto :&quot;+producto.toString());</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">		if (producto.getPrecio() &lt; 1) {</span>
+<span class="nc" id="L45">			throw new BusinessException(&quot;El precio debe ser mayor a cero&quot;);</span>
+		}
+<span class="nc" id="L47">		LOGGER.info (&quot;La validación ha sido exitosa&quot;);</span>
+<span class="nc" id="L48">		return productoDao.save(producto);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

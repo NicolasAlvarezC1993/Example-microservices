@@ -1,0 +1,16 @@
+{
+  "id" : "6e1372ba-7dcd-4380-a6f3-4f496c631f76",
+  "request" : {
+    "url" : "/ver/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "\n      <Producto>\n      <id>1</id>\n      <nombre>Nissan</nombre>\n      <precio>800.0</precio>\n      <createAt>1394938800000</createAt>\n      </Producto>\n    ",
+    "headers" : {
+      "Content-Type" : "application/xml"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "6e1372ba-7dcd-4380-a6f3-4f496c631f76"
+}
